@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://k-n-arcana.github.io/sitemap.xml
+# deployed 2026-11-21
+
+
+
