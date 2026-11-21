@@ -234,6 +234,24 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 44px;colo
   th,td{padding:9px 10px}
 }
 
+/* pruning figures */
+.prune-fig{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 16px;margin:18px 0}
+.prune-fig .fig-cap{font-size:.8rem;font-weight:900;letter-spacing:.1em;color:var(--leaf);margin:0 0 4px}
+.prune-fig h3{font-size:1.08rem;margin:0 0 6px}
+.prune-fig .fig-lead{font-size:.9rem;color:var(--ink2);margin:0 0 12px;line-height:1.75}
+.prune-fig svg{width:100%;height:auto;display:block}
+.prune-fig .fig-note{font-size:.88rem;margin:12px 0 0;padding:10px 13px;border-radius:10px;background:#fdf3e0;color:#7a5205;line-height:1.75}
+@media (prefers-color-scheme: dark){ .prune-fig .fig-note{background:#3a2f14;color:#f0cd85} }
+.prune-fig .fig-legend{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:7px 16px;font-size:.9rem}
+.prune-fig .fig-legend li{display:flex;gap:9px;align-items:flex-start;line-height:1.6}
+.prune-fig .fig-legend .n{flex:0 0 24px;height:24px;border-radius:50%;color:#fff;font-weight:900;font-size:.82rem;display:flex;align-items:center;justify-content:center;margin-top:2px}
+@media (max-width:820px){ .prune-fig{padding:16px 12px 13px} .prune-fig .fig-legend{grid-template-columns:1fr} }
+.svg-t{font-family:"Zen Kaku Gothic New",system-ui,sans-serif}
+.svg-lab{font-size:16px;font-weight:900;fill:var(--ink)}
+.svg-sub{font-size:13.5px;font-weight:700;fill:var(--ink2)}
+.svg-warn{font-size:14px;font-weight:900;fill:#b84a3a}
+@media (prefers-color-scheme: dark){ .svg-warn{fill:#e08a7a} }
+
 /* paged layout (top + one theme per page) */
 .page[hidden]{display:none!important}
 .topnav a.active{background:var(--navy);color:#fff}
@@ -312,7 +330,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 44px;colo
       <a class="theme-card" href="#/soil"><span class="theme-num">06</span><h3>土づくり</h3><p>ブルーベリーは酸性の土（pH 4.5〜5.5）が命。この庭でテスト中の配合、ピートモス4：鹿沼土4：パーライト1も紹介します。</p><span class="theme-go">このテーマを読む →</span></a>
       <a class="theme-card" href="#/repot"><span class="theme-num">07</span><h3>鉢増しと植え替え</h3><p>根鉢を崩さず大きな鉢へ移す「鉢増し」と、土と根を更新する「植え替え」。育てるペースの選び方と、9月の鉢増しの考え方も。</p><span class="theme-go">このテーマを読む →</span></a>
       <a class="theme-card" href="#/cuttings"><span class="theme-num">08</span><h3>挿し木で増やす</h3><p>親と同じ性質の苗を作る挿し木。梅雨の緑枝挿しと、冬剪定の枝を使う休眠枝挿し、それぞれの手順と発根後の育て方。</p><span class="theme-go">このテーマを読む →</span></a>
-      <a class="theme-card" href="#/pruning"><span class="theme-num">09</span><h3>剪定</h3><p>花芽と葉芽の見分け方、切る枝の順番、古い主軸を入れ替える更新剪定。若木の軽い剪定と、系統ごとの違いもまとめました。</p><span class="theme-go">このテーマを読む →</span></a>
+      <a class="theme-card" href="#/pruning"><span class="theme-num">09</span><h3>剪定</h3><p>花芽と葉芽の見分け方、切る枝の順番、古い主軸を入れ替える更新剪定。若木の軽い剪定と、系統ごとの違いもまとめました。芽の見分け・切る枝・切り口・剪定前後の図解4点つき。</p><span class="theme-go">このテーマを読む →</span></a>
       <a class="theme-card" href="#/care"><span class="theme-num">10</span><h3>水やり・肥料の基本</h3><p>日常の世話は水やり・肥料・剪定の3つ。浅い根を乾かさない水やりと、少量を決まった時期に与える肥料の目安です。</p><span class="theme-go">このテーマを読む →</span></a>
       <a class="theme-card" href="#/calendar"><span class="theme-num">11</span><h3>年間カレンダー（横浜基準）</h3><p>月ごとに、その月の作業と木の様子を確認できます。剪定、開花、収穫、お礼肥、植え付け――横浜の1年の流れです。</p><span class="theme-go">このテーマを読む →</span></a>
       <a class="theme-card" href="#/harvest"><span class="theme-num">12</span><h3>収穫のコツ</h3><p>「青い＝完熟」ではありません。軸際まで青くなってから数日待つ見分け方、選り摘み、鳥対策と保存の方法。</p><span class="theme-go">このテーマを読む →</span></a>
@@ -1070,7 +1088,115 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 44px;colo
     </div>
   </div>
 
+  <figure class="prune-fig" style="margin-top:16px">
+    <p class="fig-cap">図解 1 ― 芽の見分け</p>
+    <h3>花芽と葉芽 ― 1本の枝で見る</h3>
+    <p class="fig-lead">冬の枝先を拡大した図です。先端側の丸い芽が花芽、下部の細い芽が葉芽。形とつく場所が違います。</p>
+    <svg viewBox="0 0 720 330" role="img" aria-label="花芽と葉芽の見分け図。枝の先端側に丸くふっくらした花芽、下部に小さく尖った葉芽がついている">
+      <!-- branch -->
+      <path d="M70 268 C 240 236, 470 168, 648 84" fill="none" stroke="#7a5a38" stroke-width="15" stroke-linecap="round"/>
+      <path d="M70 268 C 240 236, 470 168, 648 84" fill="none" stroke="#966f42" stroke-width="7" stroke-linecap="round" opacity=".65"/>
+      <!-- side twig with leaf buds -->
+      <path d="M300 224 C 330 196, 352 176, 386 158" fill="none" stroke="#7a5a38" stroke-width="7" stroke-linecap="round"/>
+      <!-- flower buds: plump teardrops near tip -->
+      <g fill="#4a5fb5" stroke="#2e3d6b" stroke-width="2">
+        <ellipse cx="648" cy="80" rx="17" ry="23" transform="rotate(38 648 80)"/>
+        <ellipse cx="596" cy="106" rx="15" ry="21" transform="rotate(38 596 106)"/>
+        <ellipse cx="540" cy="132" rx="14" ry="19" transform="rotate(38 540 132)"/>
+        <ellipse cx="486" cy="156" rx="13" ry="17" transform="rotate(38 486 156)"/>
+      </g>
+      <g fill="none" stroke="#c0cbf2" stroke-width="2" opacity=".8">
+        <path d="M636 66 q12 12 8 28"/><path d="M585 92 q11 11 7 25"/><path d="M530 120 q10 10 6 22"/>
+      </g>
+      <!-- leaf buds: small pointed, flat against branch -->
+      <g fill="#3d7a4a" stroke="#2c5a36" stroke-width="2">
+        <path d="M398 190 l26 -13 l-6 20 q-10 4 -20 -7z"/>
+        <path d="M268 232 l24 -10 l-7 18 q-9 3 -17 -8z"/>
+        <path d="M368 166 l20 -16 l0 19 q-8 6 -20 -3z"/>
+        <path d="M150 254 l22 -8 l-7 16 q-8 3 -15 -8z"/>
+      </g>
+      <!-- leader lines + labels -->
+      <line x1="600" y1="58" x2="600" y2="30" stroke="var(--ink2)" stroke-width="1.6"/>
+      <circle cx="600" cy="60" r="3.5" fill="var(--ink2)"/>
+      <text class="svg-t svg-lab" x="600" y="20" text-anchor="middle">花芽 ― 丸くふっくら大きい</text>
+      <line x1="286" y1="238" x2="286" y2="292" stroke="var(--ink2)" stroke-width="1.6"/>
+      <circle cx="286" cy="236" r="3.5" fill="var(--ink2)"/>
+      <text class="svg-t svg-lab" x="286" y="316" text-anchor="middle">葉芽 ― 小さく尖って平たい</text>
+      <text class="svg-t svg-sub" x="470" y="316" text-anchor="middle">← 枝の下部・内側に多い</text>
+      <text class="svg-t svg-sub" x="88" y="316">枝の先端側 →</text>
+    </svg>
+    <p class="fig-note">⚠ <b>花芽を落としすぎないこと。</b>花芽は枝先に集中します。枝先を一律に切り戻すと、その年の花と実をまとめて失います。切るのは付け根から間引く枝だけにし、花芽のついた枝先は残すのが原則です。</p>
+  </figure>
+
   <h3 style="margin:26px 0 10px;font-size:1.12rem">切る枝 ― この順番で見ていく</h3>
+
+  <figure class="prune-fig">
+    <p class="fig-cap">図解 2 ― 切る枝の見分け</p>
+    <h3>切る枝は5種類 ― 色と番号で見る</h3>
+    <p class="fig-lead">落葉した株全体の姿です。切る枝を色分けし、番号を付けました。番号は下の手順リストと対応しています（③と④は手順3でまとめて間引きます）。色のついていない枝は残す枝です。</p>
+    <svg viewBox="0 0 720 430" role="img" aria-label="切る枝の見分け図。枯れ枝、古い主軸、交差する内向き枝、垂れる枝、細く弱い枝を色分けと番号で示した株全体の図">
+      <!-- ground -->
+      <ellipse cx="360" cy="398" rx="215" ry="14" fill="var(--bg2)"/>
+      <line x1="120" y1="398" x2="600" y2="398" stroke="var(--line)" stroke-width="3"/>
+      <!-- keep branches (neutral brown) -->
+      <g fill="none" stroke="#8a6a44" stroke-linecap="round">
+        <path d="M330 396 C 322 300, 306 220, 268 140" stroke-width="11"/>
+        <path d="M352 396 C 356 296, 366 214, 388 128" stroke-width="10"/>
+        <path d="M268 140 C 240 108, 208 88, 168 76" stroke-width="6"/>
+        <path d="M388 128 C 420 100, 452 88, 492 84" stroke-width="6"/>
+        <path d="M300 236 C 272 214, 244 204, 210 200" stroke-width="5"/>
+        <path d="M372 240 C 402 218, 430 208, 462 204" stroke-width="5"/>
+      </g>
+      <!-- young shoot (keep, green tint) -->
+      <path d="M382 396 C 396 340, 414 292, 444 250" fill="none" stroke="#3d7a4a" stroke-width="7" stroke-linecap="round"/>
+      <!-- 2 old cane: thick dark cracked, center-left -->
+      <path d="M344 396 C 340 310, 330 240, 300 168" fill="none" stroke="#5d4433" stroke-width="17" stroke-linecap="round"/>
+      <path d="M300 168 C 282 140, 258 122, 226 110" fill="none" stroke="#5d4433" stroke-width="8" stroke-linecap="round"/>
+      <g stroke="#3c2b1e" stroke-width="2" opacity=".7"><path d="M338 340 l10 8 M334 292 l11 7 M326 246 l10 8 M312 200 l10 7"/></g>
+      <!-- 1 dead branch: gray, right upper, no buds -->
+      <path d="M388 128 C 428 128, 462 140, 500 168" fill="none" stroke="#9a958a" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 0"/>
+      <path d="M452 146 C 470 132, 492 126, 516 128" fill="none" stroke="#9a958a" stroke-width="5" stroke-linecap="round"/>
+      <!-- 3 crossing inward branches: orange, crossing center -->
+      <path d="M306 226 C 348 208, 396 190, 448 158" fill="none" stroke="#d97b29" stroke-width="7" stroke-linecap="round"/>
+      <path d="M414 236 C 378 214, 340 196, 296 182" fill="none" stroke="#d97b29" stroke-width="7" stroke-linecap="round"/>
+      <!-- 4 low drooping branch: purple, left low -->
+      <path d="M326 330 C 272 338, 216 356, 168 384" fill="none" stroke="#7a4fa3" stroke-width="7" stroke-linecap="round"/>
+      <path d="M232 352 C 214 368, 200 378, 182 388" fill="none" stroke="#7a4fa3" stroke-width="5" stroke-linecap="round"/>
+      <!-- 5 thin weak twigs: red thin lines -->
+      <g fill="none" stroke="#c24534" stroke-width="3.5" stroke-linecap="round">
+        <path d="M352 300 C 330 282, 312 272, 288 266"/>
+        <path d="M366 268 C 388 250, 404 242, 428 238"/>
+        <path d="M398 330 C 420 318, 438 312, 460 310"/>
+      </g>
+      <!-- flower buds on kept tips -->
+      <g fill="#4a5fb5"><ellipse cx="166" cy="74" rx="7" ry="10" transform="rotate(-52 166 74)"/><ellipse cx="494" cy="82" rx="7" ry="10" transform="rotate(48 494 82)"/><ellipse cx="446" cy="248" rx="6" ry="9" transform="rotate(52 446 248)"/></g>
+      <!-- number badges -->
+      <g class="svg-t" font-weight="900" font-size="17" text-anchor="middle">
+        <circle cx="520" cy="122" r="15" fill="#8a8578"/><text x="520" y="129" fill="#fff">1</text>
+        <circle cx="282" cy="96" r="15" fill="#5d4433"/><text x="282" y="103" fill="#fff">2</text>
+        <circle cx="376" cy="176" r="15" fill="#d97b29"/><text x="376" y="183" fill="#fff">3</text>
+        <circle cx="150" cy="352" r="15" fill="#7a4fa3"/><text x="150" y="359" fill="#fff">4</text>
+        <circle cx="478" cy="298" r="15" fill="#c24534"/><text x="478" y="305" fill="#fff">5</text>
+      </g>
+      <!-- labels -->
+      <text class="svg-t svg-lab" x="540" y="104">① 枯れ枝</text>
+      <text class="svg-t svg-lab" x="196" y="66">② 古い主軸</text>
+      <text class="svg-t svg-lab" x="470" y="168">③ 交差・内向き枝</text>
+      <text class="svg-t svg-lab" x="86" y="330">④ 垂れる枝</text>
+      <text class="svg-t svg-lab" x="492" y="330">⑤ 細く弱い枝</text>
+      <text class="svg-t svg-sub" x="560" y="252">若いシュートは残す（後継者）</text>
+      <line x1="556" y1="256" x2="452" y2="258" stroke="var(--ink2)" stroke-width="1.4"/>
+    </svg>
+    <ul class="fig-legend">
+      <li><span class="n" style="background:#8a8578">1</span><span><b>枯れ枝・病気の枝</b> ― 手順1。芽がなく色がくすんだ枝は付け根から。</span></li>
+      <li><span class="n" style="background:#5d4433">2</span><span><b>古い主軸枝</b> ― 手順2。樹皮が荒れた太い幹は株元（地際）で切る更新剪定。</span></li>
+      <li><span class="n" style="background:#d97b29">3</span><span><b>交差枝・内向き枝</b> ― 手順3。擦れ合う枝と中心へ伸びる枝を間引く。</span></li>
+      <li><span class="n" style="background:#7a4fa3">4</span><span><b>低く垂れる枝</b> ― 手順3。地面に届きそうな枝は実の汚れと病気のもと。</span></li>
+      <li><span class="n" style="background:#c24534">5</span><span><b>細く弱い枝</b> ― 手順4。鉛筆より細い枝は付け根から整理する。</span></li>
+      <li><span class="n" style="background:#3d7a4a">残</span><span><b>残す枝</b> ― 花芽のついた充実した枝と、太くまっすぐな若いシュート（更新の後継者）。</span></li>
+    </ul>
+  </figure>
+
   <div class="steps">
     <div class="step"><div><h3>まず、枯れ枝・病気の枝・傷んだ枝</h3><p>色がくすんで芽のない枝、折れた枝、カビや病斑のある枝は、付け根から取り除きます。病気の枝を切ったあとのハサミは、次に健康な木を切る前に消毒を（病気を移さないため）。迷わず切ってよい枝が、最初の一歩です。</p></div></div>
     <div class="step"><div><h3>次に、役目を終えた古い主軸枝（更新剪定）</h3><p>樹皮が荒れて色が濃く、細い枝ばかり出している古い主軸枝は、<b>株元から切り取ります</b>。切り株を残すと、そこから弱い枝が出たり腐れが入ったりするので、地際で平らに切るのがコツです。1年に切るのは<b>最も古いものから1〜2本</b>まで（下の「更新剪定の考え方」参照）。</p></div></div>
@@ -1078,6 +1204,55 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 44px;colo
     <div class="step"><div><h3>細い弱い枝を整理する</h3><p>鉛筆より細い弱々しい枝や、株元から出たばかりのひょろ長いシュートのうち勢いのないものは、実をつけても小さいだけです。付け根から間引きます。逆に、<b>太くまっすぐな若いシュートは更新用の後継者</b>なので、場所が良ければ残してください。</p></div></div>
     <div class="step"><div><h3>仕上げに全体を見る ― 切りすぎていないか</h3><p>1回の剪定で切る量は、<b>全体の2〜3割まで</b>が目安です。花芽のついた充実した枝がバランスよく残っているか、株の中心に光が入るようになったかを確認して終えます。「迷う枝は残す」が失敗しない原則 ― 切りすぎは取り返せませんが、残しすぎは来年また切れます。</p></div></div>
   </div>
+
+  <figure class="prune-fig">
+    <p class="fig-cap">図解 3 ― 切り口</p>
+    <h3>切り戻すときの切り口 ― 正しい位置と、ダメな例</h3>
+    <p class="fig-lead">枝先を切り戻す場合は、外向きの芽の少し上で、芽の向きに沿って斜めに切ります。残しすぎても、近すぎてもいけません。</p>
+    <svg viewBox="0 0 720 300" role="img" aria-label="切り口の図。外向きの芽の少し上で斜めに切る正しい例と、切り残しが長い例、芽に近すぎる例の比較">
+      <!-- panel dividers -->
+      <line x1="240" y1="18" x2="240" y2="282" stroke="var(--line)" stroke-width="2"/>
+      <line x1="480" y1="18" x2="480" y2="282" stroke="var(--line)" stroke-width="2"/>
+      <!-- OK panel -->
+      <g>
+        <path d="M52 252 L150 118" stroke="#7a5a38" stroke-width="16" stroke-linecap="round"/>
+        <path d="M118 158 L176 128" stroke="#7a5a38" stroke-width="8" stroke-linecap="round"/>
+        <ellipse cx="128" cy="146" rx="9" ry="13" transform="rotate(52 128 146)" fill="#3d7a4a" stroke="#2c5a36" stroke-width="2"/>
+        <!-- cut face -->
+        <line x1="138" y1="106" x2="164" y2="128" stroke="#e8c98f" stroke-width="9" stroke-linecap="round"/>
+        <path d="M132 96 l38 34" stroke="#b84a3a" stroke-width="3" stroke-dasharray="6 5"/>
+        <text class="svg-t svg-sub" x="182" y="92">切り口は芽の向きに斜め</text>
+        <text class="svg-t svg-sub" x="182" y="112">芽の5〜10mm上</text>
+        <circle cx="120" cy="36" r="17" fill="#3d7a4a"/><text class="svg-t" x="120" y="43" text-anchor="middle" font-size="18" font-weight="900" fill="#fff">○</text>
+        <text class="svg-t svg-lab" x="120" y="282" text-anchor="middle">正しい切り方</text>
+        <text class="svg-t svg-sub" x="120" y="262" text-anchor="middle">外向きの芽を残す</text>
+      </g>
+      <!-- NG stub -->
+      <g>
+        <path d="M292 252 L390 118" stroke="#7a5a38" stroke-width="16" stroke-linecap="round"/>
+        <path d="M330 190 L404 84" stroke="#7a5a38" stroke-width="11" stroke-linecap="round"/>
+        <ellipse cx="352" cy="168" rx="9" ry="13" transform="rotate(52 352 168)" fill="#3d7a4a" stroke="#2c5a36" stroke-width="2"/>
+        <line x1="396" y1="76" x2="414" y2="92" stroke="#e8c98f" stroke-width="8" stroke-linecap="round"/>
+        <path d="M352 150 C 372 128, 390 106, 402 88" fill="none" stroke="#b84a3a" stroke-width="2.5" stroke-dasharray="5 5"/>
+        <text class="svg-t svg-warn" x="416" y="70">切り残し（スタブ）</text>
+        <circle cx="360" cy="36" r="17" fill="#b84a3a"/><text class="svg-t" x="360" y="43" text-anchor="middle" font-size="18" font-weight="900" fill="#fff">×</text>
+        <text class="svg-t svg-lab" x="360" y="282" text-anchor="middle">ダメな例 1</text>
+        <text class="svg-t svg-sub" x="360" y="262" text-anchor="middle">残した部分が枯れ込む</text>
+      </g>
+      <!-- NG too close -->
+      <g>
+        <path d="M532 252 L630 118" stroke="#7a5a38" stroke-width="16" stroke-linecap="round"/>
+        <ellipse cx="612" cy="140" rx="9" ry="13" transform="rotate(52 612 140)" fill="#3d7a4a" stroke="#2c5a36" stroke-width="2"/>
+        <line x1="618" y1="124" x2="640" y2="142" stroke="#e8c98f" stroke-width="9" stroke-linecap="round"/>
+        <path d="M600 122 l16 18 M616 122 l-16 18" stroke="#b84a3a" stroke-width="3.5" stroke-linecap="round"/>
+        <text class="svg-t svg-warn" x="560" y="70">芽に近すぎる</text>
+        <circle cx="600" cy="36" r="17" fill="#b84a3a"/><text class="svg-t" x="600" y="43" text-anchor="middle" font-size="18" font-weight="900" fill="#fff">×</text>
+        <text class="svg-t svg-lab" x="600" y="282" text-anchor="middle">ダメな例 2</text>
+        <text class="svg-t svg-sub" x="600" y="262" text-anchor="middle">芽を傷め、枯れる原因に</text>
+      </g>
+    </svg>
+    <p class="fig-note">主軸枝を更新で切るときは、この図とは別に<b>株元（地際）で平らに</b>切ります。切り株（スタブ）を残すと、そこから弱い枝が出たり腐れが入ったりします。大きな切り口には癒合剤を塗ると安心です。</p>
+  </figure>
 
   <h3 style="margin:26px 0 10px;font-size:1.12rem">更新剪定の考え方 ― 枝の「年齢バランス」を保つ</h3>
   <p style="color:var(--ink2);font-size:.94rem;margin:0 0 14px">主軸枝（株元から立ち上がる太い枝）には寿命があります。実つきのピークは4〜6年目で、7年を過ぎると急に衰えます。毎年いちばん古い主軸を1〜2本ずつ株元から切り、代わりに株元から出る若いシュートを育てて後継にすると、木全体が常に「若い枝・働き盛り・ベテラン」の混ざった構成になり、収穫量と実の大きさが安定します。これが更新剪定です。何年も剪定していない木を一度に若返らせようとせず、<b>2〜3年かけて段階的に</b>入れ替えてください（どうしても樹勢が落ちた木では、古い主軸を思い切って多めに切る「強めの更新」もありますが、その年の収穫は大きく減る前提です）。</p>
@@ -1091,6 +1266,72 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 44px;colo
   </table>
   </div>
   <p style="font-size:.9rem;color:var(--ink2);margin:10px 0 0">成木の主軸枝の本数の目安は、ハイブッシュ系で<b>6〜10本ほど</b>。本数そのものより、「古い枝ばかりになっていないか」が大事です。</p>
+
+  <figure class="prune-fig">
+    <p class="fig-cap">図解 4 ― ビフォーアフター</p>
+    <h3>剪定前と剪定後 ― 混み合いが取れて、年齢バランスがそろう</h3>
+    <p class="fig-lead">左が剪定前、右が剪定後です。切る量は全体の2〜3割まで。いちばん古い主軸を株元から外し、若いシュートを後継に残すことで、中心に光と風が入ります。</p>
+    <svg viewBox="0 0 720 380" role="img" aria-label="剪定前と剪定後の比較図。混み合った株が、主軸が年齢バランスよく残り風通しのよい姿になる">
+      <!-- BEFORE -->
+      <text class="svg-t svg-lab" x="180" y="30" text-anchor="middle">剪定前 ― 混み合っている</text>
+      <ellipse cx="180" cy="352" rx="150" ry="11" fill="var(--bg2)"/>
+      <g fill="none" stroke-linecap="round">
+        <g stroke="#8a6a44">
+          <path d="M160 350 C 154 260, 140 180, 104 104" stroke-width="10"/>
+          <path d="M176 350 C 178 258, 186 176, 204 100" stroke-width="10"/>
+          <path d="M196 350 C 210 268, 232 196, 268 132" stroke-width="9"/>
+          <path d="M104 104 C 80 78, 54 64, 26 58" stroke-width="5"/>
+          <path d="M204 100 C 228 76, 254 64, 284 60" stroke-width="5"/>
+          <path d="M150 220 C 190 200, 226 190, 262 188" stroke-width="5"/>
+          <path d="M212 226 C 176 208, 146 198, 112 196" stroke-width="5"/>
+          <path d="M168 300 C 128 308, 94 322, 66 342" stroke-width="6"/>
+        </g>
+        <path d="M184 350 C 182 272, 176 204, 158 140" stroke="#5d4433" stroke-width="15"/>
+        <path d="M158 140 C 140 112, 116 96, 88 88" stroke="#5d4433" stroke-width="7"/>
+        <g stroke="#c24534" stroke-width="3">
+          <path d="M172 268 C 150 252, 132 246, 108 242"/>
+          <path d="M188 240 C 208 226, 224 220, 246 218"/>
+          <path d="M162 300 C 184 288, 200 284, 222 284"/>
+        </g>
+        <path d="M204 100 C 214 128, 232 150, 256 168" stroke="#9a958a" stroke-width="6"/>
+      </g>
+      <text class="svg-t svg-sub" x="180" y="376" text-anchor="middle">古い主軸・交差枝・細枝が重なり、中心が暗い</text>
+      <!-- arrow -->
+      <g fill="#3d7a4a"><path d="M330 178 h44 v-14 l30 26 l-30 26 v-14 h-44z"/></g>
+      <text class="svg-t" x="367" y="238" text-anchor="middle" font-size="14" font-weight="900" fill="#3d7a4a">2〜3割を切る</text>
+      <!-- AFTER -->
+      <text class="svg-t svg-lab" x="548" y="30" text-anchor="middle">剪定後 ― 風通しよく、年齢バランスよく</text>
+      <ellipse cx="548" cy="352" rx="150" ry="11" fill="var(--bg2)"/>
+      <!-- light rays into center -->
+      <g stroke="#e0aa55" stroke-width="3" stroke-linecap="round" opacity=".85">
+        <path d="M548 52 v34 M492 66 l16 28 M604 66 l-16 28"/>
+      </g>
+      <g fill="none" stroke-linecap="round">
+        <g stroke="#8a6a44">
+          <path d="M516 350 C 508 262, 492 184, 452 110" stroke-width="10"/>
+          <path d="M544 350 C 546 260, 554 180, 574 106" stroke-width="10"/>
+          <path d="M570 350 C 584 272, 606 204, 640 146" stroke-width="9"/>
+          <path d="M452 110 C 428 86, 402 72, 374 66" stroke-width="5"/>
+          <path d="M574 106 C 598 82, 624 70, 654 66" stroke-width="5"/>
+          <path d="M500 224 C 472 206, 446 198, 416 196" stroke-width="5"/>
+          <path d="M592 228 C 620 210, 646 202, 676 200" stroke-width="5"/>
+        </g>
+        <path d="M596 350 C 610 306, 628 268, 654 236" stroke="#3d7a4a" stroke-width="7"/>
+      </g>
+      <!-- cut stump of old cane -->
+      <path d="M520 350 h26" stroke="#5d4433" stroke-width="9" stroke-linecap="round"/>
+      <path d="M524 344 l18 -6" stroke="#b84a3a" stroke-width="2.5" stroke-dasharray="4 4"/>
+      <g fill="#4a5fb5">
+        <ellipse cx="372" cy="64" rx="7" ry="10" transform="rotate(-52 372 64)"/>
+        <ellipse cx="656" cy="64" rx="7" ry="10" transform="rotate(52 656 64)"/>
+        <ellipse cx="414" cy="194" rx="6" ry="9" transform="rotate(-64 414 194)"/>
+        <ellipse cx="678" cy="198" rx="6" ry="9" transform="rotate(64 678 198)"/>
+        <ellipse cx="656" cy="234" rx="6" ry="9" transform="rotate(52 656 234)"/>
+      </g>
+      <text class="svg-t svg-sub" x="548" y="376" text-anchor="middle">若い枝・働き盛り・ベテランが混ざり、花芽が残る</text>
+      <text class="svg-t svg-sub" x="470" y="330">古い主軸は地際で切る</text>
+    </svg>
+  </figure>
 
   <div class="grid2" style="margin-top:18px">
     <div class="card sys-card">
