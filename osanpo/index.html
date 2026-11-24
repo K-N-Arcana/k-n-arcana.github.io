@@ -66,6 +66,19 @@
       }
       .lead strong{ color:var(--ink); }
 
+      /* ---------- poodle info banner ---------- */
+      .poodle-banner{
+        display:flex; align-items:center; justify-content:space-between; gap:12px;
+        margin:16px 0 6px; padding:14px 18px;
+        background:var(--accent); color:var(--accent-ink);
+        border-radius:14px; text-decoration:none;
+        box-shadow:0 4px 14px rgba(60,40,20,.18);
+      }
+      .poodle-banner .pb-text{ font-weight:700; font-size:1rem; line-height:1.5; }
+      .poodle-banner .pb-arrow{ font-size:1.3rem; font-weight:700; flex-shrink:0; }
+      .poodle-banner:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; }
+      .poodle-banner--bottom{ margin:36px 0 0; }
+
       /* ---------- filters ---------- */
       .filters{
         position:sticky; top:0; z-index:20;
@@ -173,6 +186,12 @@
 
       <p class="lead">カノン・カイン・リノン・ジュノンの<strong>毎日のお散歩</strong>を並べたアルバムです。写真をタップすると大きく見られます。</p>
 
+      <!-- スタンダードプードル情報ページへのリンク（上部） -->
+      <a class="poodle-banner" href="https://k-n-arcana.github.io/poodle/">
+        <span class="pb-text">スタンダードプードルについて🐩 性格・お手入れ・うちの子紹介はこちら</span>
+        <span class="pb-arrow" aria-hidden="true">→</span>
+      </a>
+
       <!-- 絞り込み -->
       <div class="filters" role="group" aria-label="犬で絞り込み" id="filters">
         <button class="chip" data-filter="all" aria-pressed="true">すべて</button>
@@ -186,6 +205,12 @@
 
       <div id="gallery"></div>
       <p class="empty" id="empty">この絞り込みの写真は、まだここにはありません。</p>
+
+      <!-- スタンダードプードル情報ページへのリンク（下部） -->
+      <a class="poodle-banner poodle-banner--bottom" href="https://k-n-arcana.github.io/poodle/">
+        <span class="pb-text">スタンダードプードルについて🐩 性格・お手入れ・うちの子紹介はこちら</span>
+        <span class="pb-arrow" aria-hidden="true">→</span>
+      </a>
 
       <footer>お散歩アルバム ― 2026年11月15日〜24日の記録（試作）</footer>
     </main>
