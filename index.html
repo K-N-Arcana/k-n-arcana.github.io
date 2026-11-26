@@ -243,10 +243,14 @@
       body.filtering [data-sym].hit{opacity:1}
 
       /* names table */
-      .names-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:15px}
-      .names-table th,.names-table td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}
+      .names-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:15px;table-layout:fixed}
+      .names-table th:nth-child(1){width:25%}
+      .names-table th:nth-child(2){width:23%}
+      .names-table th:nth-child(3){width:21%}
+      .names-table th:last-child{width:31%}
+      .names-table th,.names-table td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;overflow-wrap:break-word}
       .names-table thead th{background:var(--paper-2);font-size:13px;letter-spacing:.06em;color:var(--muted);font-weight:700}
-      .names-table .src-name{font-family:"Noto Serif JP",serif;font-weight:700;white-space:nowrap}
+      .names-table .src-name{font-family:"Noto Serif JP",serif;font-weight:700}
       .names-table .yomi{font-family:"Noto Serif JP",serif;font-size:17px}
       .names-table .arrow{color:var(--faint);margin:0 .3em}
       @media (max-width:640px){
